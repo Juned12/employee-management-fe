@@ -9,6 +9,8 @@ In the project directory, you can run:
 
 Installs all the project dependencies
 
+* Make sure the back-end server is running
+
 ### `npm start`
 
 Runs the app in the development mode.\

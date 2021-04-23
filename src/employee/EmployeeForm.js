@@ -4,12 +4,12 @@ import React, { useState, useEffect } from 'react';
 const EmployeeForm = (props ) => {
     const [formData, setFormData] = useState({});
     const [errors, setError] = useState({})
-    
+
     useEffect(() => {
       setFormData(props.formData);
       setError(props.errors)
   }, [props])
-  
+
     const { first_name, last_name, email, dob, address, company, password, mobile, city, emp_id, id } = formData;
     const onChange = e => setFormData({ ...formData, [e.target.name]: e.target.value });
     return(
@@ -28,7 +28,7 @@ const EmployeeForm = (props ) => {
                     />
                     <p className="text-danger">{ errors.first_name }</p>
                     </div>
-            
+
                     <div className="form-group">
                     <label>Address</label>
                     <input
@@ -76,7 +76,7 @@ const EmployeeForm = (props ) => {
                         required
                     />
                     <p className="text-danger">{ errors.company }</p>
-                    </div> 
+                    </div>
                 </div>
             <div className="col-md-6">
                 <div className="form-group">
@@ -141,10 +141,10 @@ const EmployeeForm = (props ) => {
                 </div>
             </div>
             </div>
-            {id && 
+            {id &&
                 <button type="submit" className="btn btn-primary btn-block">
                 Update
-                </button> || 
+                </button> ||
                 <button type="submit" className="btn btn-primary btn-block">
                 Create
                 </button>

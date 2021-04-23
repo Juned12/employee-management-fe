@@ -20,7 +20,6 @@ const initialState = {
 
 export default function(state = initialState, action) {
     const { type, payload } = action;
-    
 
     switch(type) {
         case AUTHENTICATED_SUCCESS:
@@ -67,7 +66,7 @@ export default function(state = initialState, action) {
                 ...state,
                 isAuthenticated:false,
                 error: payload
-            }    
+            }
         case LOGOUT:
             localStorage.removeItem('manager_access');
             localStorage.removeItem('manager_refresh');

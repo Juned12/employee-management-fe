@@ -6,8 +6,8 @@ import api from '../helper/api-service'
 
 
 const DeleteEmployee = (props ) => {
- 
-    function deleteEmpRecord() {     
+
+    function deleteEmpRecord() {
       api.deleteEmployee(props.id)
         .then(res => {
             props.handleSubmit('delete')
@@ -32,9 +32,9 @@ const DeleteEmployee = (props ) => {
         });
       }
     return(
-        <a 
-          className="btn-sm btn-danger" 
-          style={{marginLeft: "auto", color:"white"}} 
+        <a
+          className="btn-sm btn-danger"
+          style={{marginLeft: "auto", color:"white"}}
           onClick={confirmDeleteEmployee}
           >
           Delete

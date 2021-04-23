@@ -8,7 +8,7 @@ const Layout = ({ checkAuthenticated, load_user, children }) => {
     useEffect(() => {
         (async () => {
             await checkAuthenticated();
-            await load_user();    
+            await load_user();
         })()
       }, [])
 

@@ -16,7 +16,7 @@ const PaginateTable = (props ) => {
       setPageSize(event.target.value)
       props.handlePagination(1,event.target.value)
     }
-  
+
   return(
       <div className="mt-3">
                 {"Items per Page: "}
@@ -39,7 +39,7 @@ const PaginateTable = (props ) => {
           onChange={handlePageChange}
         />
       </div>
-  )  
+  )
 }
 
 export default PaginateTable;

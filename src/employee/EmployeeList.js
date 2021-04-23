@@ -1,5 +1,5 @@
 import React from 'react';
-import ModalForm from './Modal'
+import ModalForm from './ModalForm'
 import DeleteEmployee from './DeleteEmployee'
 import 'react-confirm-alert/src/react-confirm-alert.css'; // Import css
 import 'react-notifications/lib/notifications.css';
@@ -9,7 +9,7 @@ import PaginateTable from "../components/PaginateTable";
 
 
 class EmployeeList extends React.Component {
-   
+
     constructor(props){
         super(props);
         this.retrieveEmployees = this.retrieveEmployees.bind(this);
@@ -18,7 +18,7 @@ class EmployeeList extends React.Component {
         this.handlePagination = this.handlePagination.bind(this);
 
         this.state = {
-            employees: [], 
+            employees: [],
             page: 1,
             count: 0,
             pageSize: 5,
@@ -26,12 +26,12 @@ class EmployeeList extends React.Component {
             showModal:false,
             employeeDetail: {}
           };
-        }   
-      
+        }
+
       componentDidMount(){
           this.retrieveEmployees(this.state.page, this.state.pageSize)
       }
-      
+
       retrieveEmployees(page, pageSize ) {
         api.getEmployees(page, pageSize)
         .then(res => {
@@ -49,14 +49,14 @@ class EmployeeList extends React.Component {
       handlePagination(page,pageSize) {
         this.retrieveEmployees(page, pageSize)
       }
-        
+
       editEmployee(row) {
         this.setState({
             employeeDetail:row,
             showModal: true
         });
       }
-    openModal = () => this.setState({ 
+    openModal = () => this.setState({
         showModal: true,
         employeeDetail: {
             id:null,
@@ -77,7 +77,7 @@ class EmployeeList extends React.Component {
       this.setState({employeeDetail:employeeDetail})
       this.setState({ showModal: true })
     }
-    handleSubmit(e){ 
+    handleSubmit(e){
       this.retrieveEmployees(this.state.page, this.state.pageSize);
       this.setState({ showModal: false })
       this.setState({employeeDetail:{}})
@@ -86,27 +86,27 @@ class EmployeeList extends React.Component {
       }
       if(e==='delete') {
         NotificationManager.success('Employee deleted successully', 'success', 3000);
-      } 
+      }
       if(e==='edit') {
         NotificationManager.success('Employee Updated successully', 'success', 3000);
       }
 
-    } 
+    }
       render(){
-        const {   
+        const {
             count,
           } = this.state;
-        return (   
+        return (
             <div className="card-list">
               <div style={{maxWidth: "80%", margin: "auto", marginTop: "1em", marginBottom: "1em",
                       padding: "1em"}} className="shadow">
                   <div>
                     <a className="btn btn-primary" style={{float: "right", color:"white"}} onClick={this.openModal}>Add Employee</a>
-                        <ModalForm 
+                        <ModalForm
                             closeModal={this.closeModal}
                             isOpen={this.state.showModal}
                             openModal={this.showModal}
-                            employeeDetail={this.state.employeeDetail} 
+                            employeeDetail={this.state.employeeDetail}
                             handleSubmit={this.handleSubmit}
                         />
                   </div>
@@ -114,7 +114,7 @@ class EmployeeList extends React.Component {
                     count={count}
                     handlePagination={this.handlePagination}
                   />
-                 
+
                 <div className="table-responsive">
                   <table className="table table-hover caption-top">
                       <thead className="table-light">
@@ -138,7 +138,7 @@ class EmployeeList extends React.Component {
                             <td>
                                 <a className="btn-sm btn-info" style={{marginLeft: "auto", color:"white"}} onClick={(e)=>{this.editEmployee(row)}}
                                 >Edit</a>{" "}
-                                <DeleteEmployee 
+                                <DeleteEmployee
                                   id={row.id}
                                   handleSubmit={this.handleSubmit}
                                 />

@@ -35,7 +35,7 @@ export const load_user = () => async dispatch => {
 
 export const checkAuthenticated = () => async dispatch => {
     if (localStorage.getItem('manager_access')) {
-        
+
         try {
             const body = { token : localStorage.getItem('manager_access') };
             const res = await api.validateToken(body)
@@ -43,9 +43,9 @@ export const checkAuthenticated = () => async dispatch => {
                 dispatch({
                     type: AUTHENTICATED_SUCCESS
                 });
-            } 
-        
-        } catch (err) { 
+            }
+
+        } catch (err) {
             try {
                 const refreshBody = { refresh: localStorage.getItem('manager_refresh')};
                 const res = await api.refreshToken(refreshBody)
@@ -86,7 +86,7 @@ export const login = (email, password) => async dispatch => {
 };
 
 export const signup = (data) => async dispatch => {
- 
+
     try {
         const res = await api.signup(data)
         dispatch({

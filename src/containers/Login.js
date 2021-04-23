@@ -6,7 +6,7 @@ import { login } from '../actions/auth';
 const Login = ({ login, isAuthenticated, error }) => {
     const [formData, setFormData] = useState({
         email: '',
-        password: '' 
+        password: ''
     });
     const { email, password } = formData;
 
@@ -22,14 +22,14 @@ const Login = ({ login, isAuthenticated, error }) => {
     }
 
     return (
-       
+
       <div
         className="col-md-4 m-auto"
         style={{ justifySelf: "center", alignSelf: "center" }}
         >
         <div className="card mt-4 p-4">
           { error &&
-                Object.keys(error).map((key, index) => ( 
+                Object.keys(error).map((key, index) => (
             <div className="alert alert-danger" role="alert">
                 {error[key]}
             </div>

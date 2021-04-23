@@ -14,7 +14,7 @@ const Signup = ({ signup, isAuthenticated, error })   => {
         password: '',
         password2: ''
     });
- 
+
     const { first_name, last_name, email,dob, address, company, password, password2 } = formData;
 
     const onChange = e => setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -27,7 +27,7 @@ const Signup = ({ signup, isAuthenticated, error })   => {
     if (isAuthenticated) {
         return <Redirect to='/home' />
     }
- 
+
     return (
         <div className="col-md-6 m-auto">
           <div className="card mt-4 p-4">
@@ -45,7 +45,7 @@ const Signup = ({ signup, isAuthenticated, error })   => {
                       value={first_name}
                       required
                     />
-                  <p className="text-danger" >{error?.first_name}</p> 
+                  <p className="text-danger" >{error?.first_name}</p>
                   </div>
                 </div>
                 <div className="col-md-6">
@@ -60,7 +60,7 @@ const Signup = ({ signup, isAuthenticated, error })   => {
                       value={last_name}
                       required
                     />
-                  <p className="text-danger" >{error?.last_name}</p> 
+                  <p className="text-danger" >{error?.last_name}</p>
                   </div>
                 </div>
               </div>
@@ -76,7 +76,7 @@ const Signup = ({ signup, isAuthenticated, error })   => {
                     value={dob}
                     required
                   />
-                  <p className="text-danger" >{error?.dob}</p> 
+                  <p className="text-danger" >{error?.dob}</p>
                 </div>
 
                 <div className="col-md-6 form-group">
@@ -90,7 +90,7 @@ const Signup = ({ signup, isAuthenticated, error })   => {
                     value={email}
                     required
                   />
-                  <p className="text-danger" >{error?.email}</p> 
+                  <p className="text-danger" >{error?.email}</p>
                 </div>
               </div>
               <div className="form-group">
@@ -104,7 +104,7 @@ const Signup = ({ signup, isAuthenticated, error })   => {
                   value={company}
                   required
                 />
-                <p className="text-danger" >{error?.company}</p> 
+                <p className="text-danger" >{error?.company}</p>
               </div>
               <div className="form-group">
                 <label>Address</label>
@@ -117,7 +117,7 @@ const Signup = ({ signup, isAuthenticated, error })   => {
                   value={address}
                   required
                 />
-                <p className="text-danger" >{error?.address}</p> 
+                <p className="text-danger" >{error?.address}</p>
               </div>
               <div className="form-group">
                 <label>Password</label>
@@ -130,7 +130,7 @@ const Signup = ({ signup, isAuthenticated, error })   => {
                   value={password}
                   required
                 />
-                <p className="text-danger" >{error?.password}</p> 
+                <p className="text-danger" >{error?.password}</p>
               </div>
               <div className="form-group">
                 <label>Confirm Password</label>
@@ -143,7 +143,7 @@ const Signup = ({ signup, isAuthenticated, error })   => {
                   value={password2}
                   required
                 />
-                <p className="text-danger" >{error?.password2}</p> 
+                <p className="text-danger" >{error?.password2}</p>
               </div>
               <button type="submit" className="btn btn-primary btn-block">
                 Register

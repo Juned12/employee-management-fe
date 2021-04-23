@@ -9,11 +9,11 @@ import EmployeeForm from './EmployeeForm'
 const ModalForm = (props ) => {
     const [formData, setFormData] = useState({});
     const [errors, setError] = useState({})
-    
+
     useEffect(() => {
       setFormData(props.employeeDetail);
   }, [props])
-  
+
     const { id } = formData;
 
     function updateEmployee(id,data) {
@@ -50,7 +50,7 @@ const ModalForm = (props ) => {
                   onClick: () => props.openModal(data)
                 }
               ]
-            });  
+            });
           } else {
               api.createEmployee(data)
               .then(res => {
@@ -67,14 +67,14 @@ const ModalForm = (props ) => {
     }
 
     return(
-      <Modal 
+      <Modal
         show={props.isOpen}
         onHide={props.closeModal}
       >
         <Modal.Header closeButton>
         { id &&
           <Modal.Title>Update Employee</Modal.Title> ||
-          <Modal.Title>Create Employee</Modal.Title> 
+          <Modal.Title>Create Employee</Modal.Title>
         }
         </Modal.Header>
         <Modal.Body>
@@ -83,9 +83,9 @@ const ModalForm = (props ) => {
             errors={errors}
             formData={formData}
           />
-        </Modal.Body>    
+        </Modal.Body>
       </Modal>
-    ) 
+    )
 }
 
 export default ModalForm;

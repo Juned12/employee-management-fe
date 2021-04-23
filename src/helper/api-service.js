@@ -24,7 +24,7 @@ axios.interceptors.response.use(
     let refreshToken = localStorage.getItem("manager_refresh");
     if (
           refreshToken &&
-          refreshToken != 'undefined' &&
+          refreshToken !== 'undefined' &&
           error.response.status === 401 &&
           !originalRequest._retry
         ) {

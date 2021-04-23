@@ -22,9 +22,9 @@ const Navbar = ({ logout, isAuthenticated, user }) => {
                   Logout
                 </button>
             </Fragment>
-          }      
+          }
        </nav>
-      
+
     );
 };
 

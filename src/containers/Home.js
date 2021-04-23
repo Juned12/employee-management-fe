@@ -9,7 +9,7 @@ export const Home  = ({ isAuthenticated }) => {
     if (!isAuthenticated) {
         return <Redirect to='/' />
     }
-    return (   
+    return (
         <EmployeeList />
     )
 }

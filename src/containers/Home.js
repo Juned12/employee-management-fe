@@ -1,6 +1,6 @@
 import React from 'react';
 import { Redirect } from 'react-router-dom';
-import EmployeeList from '../employee/ListEmployee'
+import EmployeeList from '../employee/EmployeeList'
 import { connect } from 'react-redux';
 import { logout } from '../actions/auth';
 
@@ -10,7 +10,7 @@ export const Home  = ({ isAuthenticated }) => {
         return <Redirect to='/' />
     }
     return (   
-        <EmployeeList></EmployeeList>
+        <EmployeeList />
     )
 }
 const mapStateToProps = state => ({

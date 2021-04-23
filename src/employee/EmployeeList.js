@@ -1,6 +1,6 @@
 import React from 'react';
-import ModalForm from './ModalForm'
-import DeleteEmployee from '../employee/DeleteEmployee'
+import ModalForm from './Modal'
+import DeleteEmployee from './DeleteEmployee'
 import 'react-confirm-alert/src/react-confirm-alert.css'; // Import css
 import 'react-notifications/lib/notifications.css';
 import {NotificationContainer, NotificationManager} from 'react-notifications';

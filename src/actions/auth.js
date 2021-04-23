@@ -47,13 +47,12 @@ export const checkAuthenticated = () => async dispatch => {
         
         } catch (err) { 
             try {
-                const refreshBody = { refresh: localStorage.getItem('manger_refresh')};
+                const refreshBody = { refresh: localStorage.getItem('manager_refresh')};
                 const res = await api.refreshToken(refreshBody)
                 dispatch({
                     type: SET_TOKEN,
                     payload: res.data
                 })
-                dispatch(load_user());
             } catch (err) {
                 dispatch({
                     type: LOGOUT

@@ -21,7 +21,7 @@ const Signup = ({ signup, isAuthenticated, error })   => {
 
     const onSubmit = e => {
         e.preventDefault();
-        signup(first_name, last_name, email,dob, address, company, password, password2)
+        signup(formData)
     };
 
     if (isAuthenticated) {

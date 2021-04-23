@@ -40,7 +40,6 @@ const DeleteEmployee = (props ) => {
           Delete
         </a>
     )
-  
 }
 
 export default DeleteEmployee;

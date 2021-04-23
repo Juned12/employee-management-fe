@@ -86,12 +86,10 @@ export const login = (email, password) => async dispatch => {
     }
 };
 
-export const signup = (first_name, last_name, email,dob, address, company, password, password2) => async dispatch => {
+export const signup = (data) => async dispatch => {
  
-    const body = { first_name, last_name, email,dob, address, company, password, password2 };
-
     try {
-        const res = await api.signup(body)
+        const res = await api.signup(data)
         dispatch({
             type: SIGNUP_SUCCESS,
             payload: res.data

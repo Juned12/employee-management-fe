@@ -6,7 +6,7 @@ import { logout } from '../actions/auth';
 
 
 export const Home  = ({ isAuthenticated }) => {
-    if (isAuthenticated==false) {
+    if (!isAuthenticated) {
         return <Redirect to='/' />
     }
     return (   

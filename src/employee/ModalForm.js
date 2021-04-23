@@ -55,7 +55,6 @@ const ModalForm = (props ) => {
           } else {
               api.createEmployee(formData)
               .then(res => {
-                  const persons = res.data;
                   props.handleSubmit('create')
                 })
               .catch(error => {

@@ -5,7 +5,7 @@ import 'react-confirm-alert/src/react-confirm-alert.css'; // Import css
 import 'react-notifications/lib/notifications.css';
 import {NotificationContainer, NotificationManager} from 'react-notifications';
 import api from '../helper/api-service'
-import PaginateTable from "../components/Pagination";
+import PaginateTable from "../components/PaginateTable";
 
 
 class EmployeeList extends React.Component {
@@ -81,13 +81,13 @@ class EmployeeList extends React.Component {
       this.retrieveEmployees(this.state.page, this.state.pageSize);
       this.setState({ showModal: false })
       this.setState({employeeDetail:{}})
-      if(e=='create') {
+      if(e==='create') {
         NotificationManager.success('Employee Created successully', 'success', 3000);
       }
-      if(e=='delete') {
+      if(e==='delete') {
         NotificationManager.success('Employee deleted successully', 'success', 3000);
       } 
-      if(e=='edit') {
+      if(e==='edit') {
         NotificationManager.success('Employee Updated successully', 'success', 3000);
       }
 

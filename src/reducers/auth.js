@@ -62,18 +62,12 @@ export default function(state = initialState, action) {
                 user: null
             }
         case LOGIN_FAIL:
-            return {
-                ...state,
-                isAuthenticated:false,
-                error: payload
-            }
         case SIGNUP_FAIL:
             return {
                 ...state,
                 isAuthenticated:false,
                 error: payload
-            }
-            
+            }    
         case LOGOUT:
             localStorage.removeItem('manager_access');
             localStorage.removeItem('manager_refresh');

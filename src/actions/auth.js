@@ -1,4 +1,3 @@
-import axios from 'axios';
 import {
     LOGIN_SUCCESS,
     LOGIN_FAIL,
@@ -54,7 +53,7 @@ export const checkAuthenticated = () => async dispatch => {
                     type: SET_TOKEN,
                     payload: res.data
                 })
-                // dispatch(load_user());
+                dispatch(load_user());
             } catch (err) {
                 dispatch({
                     type: LOGOUT

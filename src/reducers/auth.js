@@ -14,7 +14,7 @@ import {
 const initialState = {
     access: localStorage.getItem('manager_access'),
     refresh: localStorage.getItem('manager_refresh'),
-    isAuthenticated: null,
+    isAuthenticated: false,
     user: null
 };
 
@@ -43,7 +43,8 @@ export default function(state = initialState, action = {}) {
                 ...state,
                 isAuthenticated: true,
                 access: payload.token.access,
-                refresh: payload.token.refresh
+                refresh: payload.token.refresh,
+                user: payload
             }
         case USER_LOADED_SUCCESS:
             return {

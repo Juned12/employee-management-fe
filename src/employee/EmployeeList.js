@@ -4,7 +4,7 @@ import DeleteEmployee from './DeleteEmployee'
 import 'react-confirm-alert/src/react-confirm-alert.css'; // Import css
 import 'react-notifications/lib/notifications.css';
 import {NotificationContainer, NotificationManager} from 'react-notifications';
-import api from '../helper/api-service'
+import api from '../helper/api'
 import PaginateTable from "../components/PaginateTable";
 
 

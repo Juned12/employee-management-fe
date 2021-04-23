@@ -10,7 +10,7 @@ import {
     LOGOUT,
     SET_TOKEN
 } from './types';
-import api from '../helper/api-service'
+import api from '../helper/api'
 
 export const load_user = () => async dispatch => {
     if (localStorage.getItem('manager_access')) {

@@ -36,6 +36,7 @@ axios.interceptors.response.use(
                 localStorage.setItem("manager_access", res.data.access);
                 return axios(originalRequest)
               }
+              return Promise.reject(error)
             });
         }
         return Promise.reject(error)

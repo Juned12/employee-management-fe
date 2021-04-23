@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Modal from 'react-bootstrap/Modal'
 import { confirmAlert } from 'react-confirm-alert'; // Import
 import 'react-confirm-alert/src/react-confirm-alert.css'; // Import css
-import api from '../helper/api-service'
+import api from '../helper/api'
 import EmployeeForm from './EmployeeForm'
 
 

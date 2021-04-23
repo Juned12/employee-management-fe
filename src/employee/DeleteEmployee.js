@@ -16,14 +16,14 @@ const DeleteEmployee = (props ) => {
             return
           })
     }
-    function confirmDeleteEmployee(row) {
+    function confirmDeleteEmployee() {
         confirmAlert({
           title: 'Confirm to Delete',
           message: 'Are you sure ?.',
           buttons: [
             {
               label: 'Yes',
-              onClick: () => deleteEmpRecord(row)
+              onClick: () => deleteEmpRecord()
             },
             {
               label: 'No',
